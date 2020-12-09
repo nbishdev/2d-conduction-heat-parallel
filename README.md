@@ -4,7 +4,9 @@ In this project, we implement a conduction heat transfer simulation on a 2D plat
 
 As a simplification, we assume every subplate is constantly heated in its central area, instead of only the center of the whole plate.
 
-## MPI
+## Software design and implementation
+
+### MPI
 We split the computations accross multiple compute nodes, so each node is assigned a part of the computations. If fact, we split the 2D plate in subplates and each node computes conduction heat transfer on its own plate. Then, every node exchanges temperature information in their plate's boundaries with is neighbors, which are other nodes whose plates are adjacent to the node's.<br>
 
 * The number of nodes utilized must be a perfect square in order to have a perfectly balanced split. So, <img src="https://render.githubusercontent.com/render/math?math=\text{N} \in {\text{n}^2\text{, n=1,2,3,...}}">.<br>
@@ -15,20 +17,44 @@ To execute the software:
 1. Use a shell to navigate to the [MPI](/sources/MPI) directory.
 2. Edit the [mpd.hosts](/sources/MPI/mpd.hosts) file and enter the IPs of the available nodes in the network.
 3. Edit the [machines](/sources/MPI/machines) file and for each available note in the network enter the node name and the number of CPUs it has.
-4. Build the software using the [Makefile](/sources/MPI/Makefile).
-5. Execute the software with the following shell command:
+4. Build the software using the [Makefile](/sources/MPI/Makefile) using the following shell command:
+```bash
+make
+```
+5. Execute the software using the following shell command:
 ```bash
 sh exeg_prog.sh [number of processes] [number of cells] [number of epochs]
 ```
 
-## OpenMP
-This part is an extension to the MPI part. In every computation node we utilize OpenMP to split the computations within the node accross 4 threads.<br>
+### OpenMP
+This part is an extension to the MPI part, as it combines MPI with OpenMP.<br>
+In every computation node we utilize OpenMP to split the computations within the node accross 4 threads.<br>
 
 1. Use a shell to navigate to the [OpenMP](/sources/OpenMP) directory.
 2. Edit the [mpd.hosts](/sources/OpenMP/mpd.hosts) file and enter the IPs of the available nodes in the network.
 3. Edit the [machines](/sources/OpenMP/machines) file and for each available note in the network enter the node name and the number of CPUs it has.
-4. Build the software using the [Makefile](/sources/OpenMP/Makefile).
+4. Build the software using the [Makefile](/sources/OpenMP/Makefile) using the following shell command:
+```bash
+make
+```
 5. Execute the software with the following shell command:
 ```bash
 sh exeg_prog.sh [number of processes] [number of cells] [number of epochs]
 ```
+
+### CUDA
+This part is independent from the 2 previous parts, as it does not utilize MPI at all.<br>
+In a single compute node with a modern Nvidia GPU, we follow the GPGPU paradigm and utilize CUDA to perform the computations within the GPU.<br>
+On the same node, we also utilize OpenMP as a reference for comparisons.<br>
+
+1. Use a shell to navigate to the [CUDA](/sources/CUDA) directory.
+2. Build the software using the [CUDA](/sources/CUDA/Makefile) using the following shell command:
+```bash
+make
+```
+3. Execute the software with the following shell command:
+```bash
+sh exeg_prog.sh [number of cells] [number of epochs]
+```
+
+## Results
