@@ -58,3 +58,5 @@ sh exeg_prog.sh [number of cells] [number of epochs]
 ```
 
 ## Results
+
+The [measurements]() are in as well as the plots that visualize the performance improvement are
