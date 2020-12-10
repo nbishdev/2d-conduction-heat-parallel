@@ -18,7 +18,7 @@ We split the computations accross multiple compute nodes, so each node is assign
   e.g. If we have 50 nodes, then N must be in { 1,4,9,15,25,36,49 }. 
 * Since the plates are squared, the number of cells that consist the plate must be a perfect square, which must be chosen so that it can be evenly split accross the N nodes.<br>
   So, C<img src="https://render.githubusercontent.com/render/math?math=\in">{ LCM(all possible number of nodes)<sup>2</sup><img src="https://render.githubusercontent.com/render/math?math=\times">n<sup>2</sup>, n=1,2,3,... }<br>
-  e.g. if N<img src="https://render.githubusercontent.com/render/math?math=\leq">25 then LCM(1,4,9,16,25)=420 so C must be in { 420<sup>2</sup><img src="https://render.githubusercontent.com/render/math?math=\times">1, 420<sup>2</sup><img src="https://render.githubusercontent.com/render/math?math=\times">4, 420<sup>2</sup><img src="https://render.githubusercontent.com/render/math?math=\times">9,... }.
+  e.g. if N<img src="https://render.githubusercontent.com/render/math?math=\leq">25 then LCM(1,4,9,16,25)=420 so C must be in { 420<sup>2</sup><img src="https://render.githubusercontent.com/render/math?math=\times">1,   420<sup>2</sup><img src="https://render.githubusercontent.com/render/math?math=\times">4,   420<sup>2</sup><img src="https://render.githubusercontent.com/render/math?math=\times">9,... }.
 
 To execute the software:
 1. Use a shell to navigate to the [MPI](/sources/MPI) directory.
