@@ -14,10 +14,10 @@ As a simplification, we assume every subplate is constantly heated in its centra
 We split the computations accross multiple compute nodes, so each node is assigned a part of the computations. If fact, we split the 2D plate in subplates and each node computes conduction heat transfer on its own plate. Then, every node exchanges temperature information in their plate's boundaries with is neighbors, which are other nodes whose plates are adjacent to the node's.<br>
 
 * The number of nodes utilized must be a perfect square in order to have a perfectly balanced split.<br>
-  So, N<img src="https://render.githubusercontent.com/render/math?math=\in">n<sup>2</sup>, n=1,2,3,...<br>
+  So, N<img src="https://render.githubusercontent.com/render/math?math=\in">{n<sup>2</sup>, n=1,2,3,...}<br>
   e.g. If we have 50 nodes, then N must be in {1,4,9,15,25,36,49}. 
 * Since the plates are squared, the number of cells that consist the plate must be a perfect square, which must be chosen so that it can be evenly split accross the N nodes.<br>
-  So, C = LCM(all possible number of nodes)<img src="https://render.githubusercontent.com/render/math?math={}^2 \cdot">n<img src="https://render.githubusercontent.com/render/math?math={}^2">, n=1,2,3,...<br>
+  So, C<img src="https://render.githubusercontent.com/render/math?math=\in">{LCM(all possible number of nodes)<sup>2</sup><img src="https://render.githubusercontent.com/render/math?math=\times">n<sup>2</sup>, n=1,2,3,...}<br>
   e.g. if N<img src="https://render.githubusercontent.com/render/math?math=\leq"> 25 then LCM(1,4,9,16,25)=420 so C must be of the form 420<img src="https://render.githubusercontent.com/render/math?math={}^2 \cdot"> n<img src="https://render.githubusercontent.com/render/math?math={}^2">, n=1,2,3,...
 
 To execute the software:
