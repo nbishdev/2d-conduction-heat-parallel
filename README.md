@@ -4,7 +4,7 @@ In this project, we implement a conduction heat transfer simulation on a 2D plat
 
 ## Initial software
 Some software that performs the required simulation can be found [here](https://computing.llnl.gov/tutorials/mpi/samples/C/mpi_heat2D.c).<br>
-However, this software underperforms and our goal was to make it better. So, we wrote our own version, not based on the original one.
+However, this software underperforms and our goal was to make it better. So, we wrote our own version, from scratch.
 
 ## Software design and implementation
 
