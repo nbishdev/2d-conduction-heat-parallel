@@ -3,7 +3,7 @@
 In this project, we implement a conduction heat transfer simulation on a 2D plate, utilizing [parallel processing](https://en.wikipedia.org/wiki/Parallel_computing) with the use of [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface), [OpenMP](https://en.wikipedia.org/wiki/OpenMP) and [CUDA](https://en.wikipedia.org/wiki/CUDA).
 
 ## Initial software
-Some software that performs the required simulation can be found [here](https://computing.llnl.gov/tutorials/mpi/samples/C/mpi_heat2D.c).<br>
+Some initial reference software that performs the required simulation can be found [here](https://computing.llnl.gov/tutorials/mpi/samples/C/mpi_heat2D.c).<br>
 However, this software underperforms and our goal was to make it better. So, we wrote our own version, from scratch.
 
 ## Software design and implementation
