@@ -2,9 +2,13 @@
 
 In this project, we implement a conduction heat transfer simulation on a 2D plate, utilizing [parallel processing](https://en.wikipedia.org/wiki/Parallel_computing) with the use of [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface), [OpenMP](https://en.wikipedia.org/wiki/OpenMP) and [CUDA](https://en.wikipedia.org/wiki/CUDA).
 
-As a simplification, we assume every subplate is constantly heated in its central area, instead of only the center of the whole plate.
+## Initial software
+Some software that performs the required simulation can be found [here](https://computing.llnl.gov/tutorials/mpi/samples/C/mpi_heat2D.c).<br>
+However, this software underperforms and our goal was to make it better. So, we wrote our own version, not based on the original one.
 
 ## Software design and implementation
+
+As a simplification, we assume every subplate is constantly heated in its central area, instead of only the center of the whole plate.
 
 ### MPI
 We split the computations accross multiple compute nodes, so each node is assigned a part of the computations. If fact, we split the 2D plate in subplates and each node computes conduction heat transfer on its own plate. Then, every node exchanges temperature information in their plate's boundaries with is neighbors, which are other nodes whose plates are adjacent to the node's.<br>
