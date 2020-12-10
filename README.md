@@ -63,4 +63,6 @@ sh exeg_prog.sh [number of cells] [number of epochs]
 
 ## Results
 
-The [measurements](/results/measurements.xls) are in as well as the [plots](/results/plots) that visualize the performance improvement are located in the [results](/results) directory.
+The [measurements](/results/measurements.xls) are in as well as the [plots](/results/plots) that visualize the performance improvement are located in the [results](/results) directory.<br>
+In these measurements we compare our software with the underperforming initial software in order to show the performance improvements we achieved.
+We also compare the 3 different versions of our own software against each other to show the improvements we can achieve while utilizing different technologies.
