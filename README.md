@@ -17,8 +17,8 @@ We split the computations accross multiple compute nodes, so each node is assign
   So, <img src="https://render.githubusercontent.com/render/math?math=\text{N} \in {\text{n}^2\text{, n=1,2,3,...}}">.<br>
   e.g. If we have 50 nodes, then N must be in {1,4,9,15,25,36,49}. 
 * Since the plates are squared, the number of cells that consist the plate must be a perfect square, which must be chosen so that it can be evenly split accross the N nodes.<br>
-  So, C = LCM(all possible number of nodes)<img src="https://render.githubusercontent.com/render/math?math={}^2 \cdot \text{n}^2\text{, n=1,2,3,...}">.<br>
-  e.g. if <img src="https://render.githubusercontent.com/render/math?math=\text{N} \leq 25"> then LCM(1,4,9,16,25)=420 so C must be of the form <img src="https://render.githubusercontent.com/render/math?math=420^2 \cdot \text{n}^2\text{, n=1,2,3,...}">.
+  So, C = LCM(all possible number of nodes)<img src="https://render.githubusercontent.com/render/math?math={}^2 \cdot">n<img src="https://render.githubusercontent.com/render/math?math={}^2">, n=1,2,3,...<br>
+  e.g. if N<img src="https://render.githubusercontent.com/render/math?math=\leq"> 25 then LCM(1,4,9,16,25)=420 so C must be of the form 420<img src="https://render.githubusercontent.com/render/math?math={}^2 \cdot"> n<img src="https://render.githubusercontent.com/render/math?math={}^2">, n=1,2,3,...
 
 To execute the software:
 1. Use a shell to navigate to the [MPI](/sources/MPI) directory.
