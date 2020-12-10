@@ -28,7 +28,7 @@ sh exeg_prog.sh [number of processes] [number of cells] [number of epochs]
 
 ### OpenMP
 This part is an extension to the MPI part, as it combines MPI with OpenMP.<br>
-In every computation node we utilize OpenMP to split the computations within the node accross 4 threads.<br>
+In every computation node we utilize OpenMP to split the computations within the node accross 4 threads, each one communicating with a single neighbor node (North, South, East, West)<br>
 
 1. Use a shell to navigate to the [OpenMP](/sources/OpenMP) directory.
 2. Edit the [mpd.hosts](/sources/OpenMP/mpd.hosts) file and enter the IPs of the available nodes in the network.
